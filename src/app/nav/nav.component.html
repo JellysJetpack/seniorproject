@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Dashboard</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/controlchart">Control Chart</a>
+      <a mat-list-item routerLink="/machineoee">Machine OEE</a>
+      <a mat-list-item routerLink="/prodtrack">Production Tracking</a>
+      <a mat-list-item routerLink="/osr">Overall System Report</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="accent">
+      <span>Smart Production Tracking System</span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
